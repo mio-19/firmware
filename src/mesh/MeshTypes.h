@@ -32,13 +32,13 @@ enum RxSource {
  * the max number of hops a message can pass through, used as the default max for hop_limit in MeshPacket.
  *
  * We reserve 3 bits in the header so this could be up to 7, but given the high range of lora and typical usecases, keeping
- * maxhops to 3 should be fine for a while.  This also serves to prevent routing/flooding attempts to be attempted for
+ * maxhops to 6 should be fine for a while.  This also serves to prevent routing/flooding attempts to be attempted for
  * too long.
  **/
 #define HOP_MAX 7
 
-/// We normally just use max 3 hops for sending reliable messages
-#define HOP_RELIABLE 3
+/// We normally just use max 6 hops for sending reliable messages
+#define HOP_RELIABLE 6
 
 // For old firmware or when falling back to flooding, there is no next-hop preference
 #define NO_NEXT_HOP_PREFERENCE 0
